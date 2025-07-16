@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Newsletter - Coming Soon</title>
 
-  <!-- Use the same font as your main site -->
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
 
   <style>
-    /* Reset only for newsletter page */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -27,7 +25,6 @@
       min-height: 100vh;
     }
 
-    /* Header styled to match your main site header */
     header {
       position: fixed;
       top: 0;
@@ -65,11 +62,10 @@
       box-shadow: 0 0 8px #ff66c4;
     }
 
-    /* Main content styles */
     main {
-      position: relative !important;
-      z-index: 1001 !important; 
-      padding-top: 70px; /* same height as header */
+      position: relative;
+      z-index: 1001;
+      padding-top: 90px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -80,32 +76,18 @@
       padding-right: 1rem;
     }
 
-    /*#typewriter-text {
-      font-weight: 700;
-      font-size: 2.5rem;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 0.15em solid transparent;
-      color: #ffffff;
-    }*/
-
-    .cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1em;
-      background-color: #ff66c4;
-      margin-left: 4px;
-      animation: blink 1s step-start infinite;
-      vertical-align: bottom;
-    }
-
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      50.1%, 100% { opacity: 0; }
+    iframe {
+      border: none;
+      width: 100%;
+      max-width: 700px;
+      height: 900px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 102, 196, 0.2);
+      background-color: #ffffff;
     }
 
     .resume-button {
-      margin-top: 3rem;
+      margin-top: 2rem;
       background-color: #ff66c4;
       color: #181820;
       padding: 0.75rem 1.5rem;
@@ -120,7 +102,6 @@
       box-shadow: 0 0 10px #ff66c4;
     }
 
-    /* Particles canvas */
     #particles-canvas {
       position: fixed;
       top: 0; left: 0;
@@ -151,50 +132,16 @@
   </header>
 
   <main>
-    <div>
-        <h2 style="margin-bottom: 2rem;">Stay in the Loop</h2>
-        <form id="notify-form" style="display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;">
-    <input 
-        type="email" 
-        id="email" 
-        name="email" 
-        placeholder="Enter your email" 
-        required
-        style="padding: 0.75rem 1rem; border-radius: 5px; border: none; width: 280px; font-family: 'Fira Code', monospace;"
-    />
-    <button 
-        type="submit" 
-        class="resume-button"
-        style="background-color: #ff66c4; color: #ffffff; margin-top: -1px;"
-    >
-        Enter
-    </button>
-    </form>
+    <h2 style="margin-bottom: 2rem;">Stay in the Loop</h2>
 
-    <div id="thankyou-message" style="display:none; margin-top: 1rem; color: #ffffff; font-weight: bold;">
-    Thank you! We'll be in touch with you soon.
-    </div>
+    <!-- Google Form Embed -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdblQrCftVBifcz6DNdirInngtgy-5KuFeVkUksVgVvJmxbyQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
-    </div>
     <a href="index.html" class="resume-button">← Back to Home</a>
   </main>
 
   <script>
-    /*
-    const text = "COMING SOON...";
-    const typewriterText = document.getElementById("typewriter-text");
-    let index = 0;
-
-    function type() {
-      if (index < text.length) {
-        typewriterText.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 150);
-      }
-    }
-    document.addEventListener("DOMContentLoaded", type);
-*/
-    // Particle animation code here (same as before)
+    // Particle background script
     const canvas = document.getElementById('particles-canvas');
     const ctx = canvas.getContext('2d');
     let width, height;
@@ -205,6 +152,7 @@
       canvas.width = width;
       canvas.height = height;
     }
+
     resize();
     window.addEventListener('resize', resize);
 
@@ -272,45 +220,8 @@
       });
       requestAnimationFrame(animate);
     }
+
     animate();
-
-
   </script>
-
-<script>
-  const form = document.getElementById("notify-form");
-  const thankYouMessage = document.getElementById("thankyou-message");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-
-    fetch("https://formspree.io/f/xblkjwjw", {
-      method: "POST",
-      headers: {
-        "Accept": "application/json"
-      },
-      body: formData,
-    })
-    .then(response => {
-      if (response.ok) {
-        form.style.display = "none";               // hide form
-        thankYouMessage.style.display = "block";  // show thank you message
-      } else {
-        response.json().then(data => {
-          if (data.errors) {
-            alert(data.errors.map(error => error.message).join(", "));
-          } else {
-            alert("Oops! There was a problem submitting your form.");
-          }
-        });
-      }
-    })
-    .catch(() => {
-      alert("Oops! There was a problem submitting your form.");
-    });
-  });
-</script>
 </body>
 </html>
