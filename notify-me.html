@@ -278,30 +278,39 @@
   </script>
 
 <script>
-document.getElementById("notify-form").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const email = document.getElementById("email").value;
-  const thankYouMessage = document.getElementById("thankyou-message");
   const form = document.getElementById("notify-form");
+  const thankYouMessage = document.getElementById("thankyou-message");
 
-  fetch('https://script.google.com/macros/s/AKfycbwlEz1DfsgczPj_g6-Xh6rIXbv_b6p4QCjFWdn4nwCc6i7318aUGor6vL3XZSs4JjF_/exec', {
-    method: 'POST',
-    mode: 'no-cors', // prevents CORS errors
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: 'email=' + encodeURIComponent(email)
-  }).then(() => {
-    form.style.display = 'none';               // hide form
-    thankYouMessage.style.display = 'block';  // show thank you message
-  }).catch(() => {
-    alert('Something went wrong. Please try again later.');
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("https://formspree.io/f/xblkjwjw", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json"
+      },
+      body: formData,
+    })
+    .then(response => {
+      if (response.ok) {
+        form.style.display = "none";               // hide form
+        thankYouMessage.style.display = "block";  // show thank you message
+      } else {
+        response.json().then(data => {
+          if (data.errors) {
+            alert(data.errors.map(error => error.message).join(", "));
+          } else {
+            alert("Oops! There was a problem submitting your form.");
+          }
+        });
+      }
+    })
+    .catch(() => {
+      alert("Oops! There was a problem submitting your form.");
+    });
   });
-});
 </script>
-
-
-
 </body>
 </html>
