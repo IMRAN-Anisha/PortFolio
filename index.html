@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anisha Imran | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+</head>
+<body>
+<canvas id="particles-canvas"></canvas>
+
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#why" class="nav-link">My WHY</a></li>
+        <li><a href="#journey" class="nav-link">My Journey</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#certificates" class="nav-link">Certificates</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section home-section">
+      <div class="typewriter-container">
+        <h1><span id="static-text"></span></h1>
+        <h2><span id="typewriter-text"></span><span class="cursor"></span></h2>
+        <p class="tagline">Exploring tech, building futures.</p>
+      </div>
+    </section>
+
+    <section id="why" class="section why-section">
+      <h2>My "WHY?"</h2>
+      <p>
+        I believe technology is a tool for empowerment. Whether it's building smart tools or supporting students through tutoring, 
+        I’m driven by a passion to help others grow with me. From the first lines of code written in quiet
+        curiosity on scratch, to apps crafted with purpose & passion, my journey has been one of growth and discovery. 
+        Each project is a steptoward a future where technology not only solves problems but opens doors turning ideas into impact.
+      </p>
+    </section>
+
+    <section id="journey" class="section journey-section">
+      <h2>My Journey</h2>
+      <p>I was born and raised in Perth, where I built the foundation of who I am—curious, driven, and always eager to learn. 
+        Moving to Sydney for university marked a huge transition in my life: a new city, new people, and a whole new level of independence.
+        The last two years of highschool came with significant challenges—personal setbacks, academic pressure, and moments where giving up felt easier. 
+        But I made a choice: to stay dedicated. Instead of letting struggles define me, I turned them into fuel. 
+      </p>
+      <p>
+        I pushed forward, learned to manage my time, set goals, and stayed grounded in purpose.
+        Through this journey, I realised something powerful: growth feels better when it’s shared. 
+        That’s why I now dedicate my time to helping others—whether it’s through tutoring, tech projects, or simply sharing lessons I’ve learned along the way.
+        My path has been anything but linear, and I wouldn’t want it any other way.
+      </p>
+    </section>
+
+    <section id="projects" class="section projects-section">
+      <h2>Projects</h2>
+      <h3>Tech Projects</h3>
+      <ul class="projects-list">
+        <li><strong>PACMAN Recreation (2024) :</strong> My first fully functional game developed using Python as part of my ATAR Computer Science coursework, 
+          where I achieved <strong>94%</strong>. It’s a faithful recreation of the classic Pacman, involving <strong>core programming concepts such as event handling, debugging, termination conditions, 
+          collision detection, unit testing, and matrix-based maze design</strong>. I also incorporated graphics and sound to bring the game to life. This project marked a turning point from
+           beginner-level projects like guessing games and chess—which I followed through YouTube tutorials—into more structured and polished software development.</li>
+
+        <li><strong>Multi-Puzzle Game (2025) :</strong> Python-based game combining three unique challenges: a word puzzle, number puzzle, and maze game. 
+          I scored <strong>91%</strong> for this assessment. The project helped me explore more <strong> advanced concepts like depth-first search (DFS) algorithms, dynamic hint systems, 
+          and object-oriented programming principles such as abstraction, encapsulation, and polymorphism</strong>. Future plans include expanding it with database integration and 
+          a companion website to track user progress and stats.</li>
+
+        <p>Find out more about my projects and their documentation on my LinkedIn and Github</p>
+      </ul>
+
+      <h3>Business (Tutoring, Newsletter & App Development)</h3>
+      <p>Launching soon: a tutoring support site and newsletter for students. Focused on NAPLAN, GATE, Special Needs support for Neurodivergent Students and motivation for all learners.</p>
+      <a href="notify-me.html" class="notify-button">Notify Me</a>
+
+    </section>
+
+    <section id="skills" class="section skills-section">
+      <h2>Skills</h2>
+      <div class="skills-tags">
+        <span>Python</span>
+        <span>HTML/CSS/JS (basic web) </span>
+        <span>Flutter (learning)</span>
+        <span>Canva</span>
+        <span>Teamwork</span>
+        <span>Tutoring & Leadership</span>
+        <span>Organisation</span>
+        <span>AI Tools</span>
+        <span>Microsoft Excel</span>
+        <span>SQL</span>
+      </div>
+    </section>
+
+    <section id="certificates" class="section certificates-section">
+    <h2>Certificates</h2>
+
+    <div class="cert-container">
+      <button class="scroll-btn left" onclick="scrollCerts('left')">&#10094;</button>
+
+      <div class="cert-scroll" id="cert-scroll">
+        <!--need to add something here instead of doing scrolling like this, fix asap-->
+        <img src="certificates/Microsoft Project Management.png" alt="Microsoft Certificate | Project Management " class="cert-thumbnail" />
+        <img src="certificates/Lund University AI & LAW.png" alt="Lund University Certificate | AI & LAW" class="cert-thumbnail" />
+        <img src="certificates/IBM Intro to AI.png" alt="IBM Certificate | Introduction to Artificial Intelligence" class="cert-thumbnail" />
+        <img src="certificates/Meta Intro to Front End Development.png" alt="Meta Certificate | Introduction to Front End Development" class="cert-thumbnail" />
+        <img src="certificates/Microsoft Project Management.png" alt="Microsoft Certificate | Project Management " class="cert-thumbnail" />
+        <img src="certificates/Lund University AI & LAW.png" alt="Lund University Certificate | AI & LAW" class="cert-thumbnail" />
+        <img src="certificates/IBM Intro to AI.png" alt="IBM Certificate | Introduction to Artificial Intelligence" class="cert-thumbnail" />
+        <img src="certificates/Meta Intro to Front End Development.png" alt="Meta Certificate | Introduction to Front End Development" class="cert-thumbnail" />
+        <img src="certificates/artificial-intelligence-essentials-v2 badge.png" alt="IBM BADGE | AI Essentials v2" class="cert-thumbnail" />
+      </div>
+
+      <button class="scroll-btn right" onclick="scrollCerts('right')">&#10095;</button>
+    </div>
+  </section>
+
+
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+  <h2>Contact</h2>
+  
+     <!-- NEED TO RENAME NEWSLETTER.HTML TO COMING-SOON.HTML ASAP -->
+  <div class="social-buttons">
+    <a href="mailto:anisha.imran@outlook.com" class="social-btn email" aria-label="Email">
+      <!-- Email SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      Email
+    </a>
+
+    <a href="newsletter.html" class="social-btn resume" download aria-label="Download Resume">
+      <!-- Resume / Document SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+        <path d="M14 2H6c-1.1 0-2 .9-2 2v16a2 2 0 002 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 18H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+      </svg>
+      Resume
+    </a>
+
+    <a href="https://www.linkedin.com/in/anisha-imran0311" target="_blank" rel="noopener noreferrer" class="social-btn linkedin" aria-label="LinkedIn">
+      <!-- LinkedIn SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+        <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.998h5v14H0v-14zm7.5 0h4.7v2h.07c.65-1.23 2.24-2.52 4.6-2.52 4.93 0 5.84 3.24 5.84 7.44v8.08h-5v-7.15c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.74 1.86-2.74 3.78v7.26h-5v-14z"/>
+      </svg>
+      LinkedIn
+    </a>
+
+    <a href="https://github.com/IMRAN-Anisha" target="_blank" rel="noopener noreferrer" class="social-btn github" aria-label="GitHub">
+      <!-- GitHub SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+        <path d="M12 .297c-6.6 0-12 5.4-12 12 0 5.3 3.438 9.8 8.205 11.385.6.11.82-.258.82-.577v-2.165c-3.338.726-4.033-1.61-4.033-1.61-.546-1.385-1.333-1.755-1.333-1.755-1.09-.745.082-.73.082-.73 1.204.082 1.837 1.237 1.837 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.776.418-1.305.763-1.605-2.665-.3-5.466-1.335-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.123-.3-.536-1.52.117-3.17 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.405c1.02.005 2.04.138 3.002.405 2.29-1.55 3.297-1.23 3.297-1.23.655 1.65.243 2.87.12 3.17.77.84 1.237 1.91 1.237 3.22 0 4.61-2.805 5.625-5.475 5.92.43.37.81 1.103.81 2.222v3.293c0 .32.217.69.825.575C20.565 22.092 24 17.59 24 12.297c0-6.6-5.4-12-12-12z"/>
+      </svg>
+      GitHub
+    </a>
+    <a href="notify-me.html" class="notify-button">Newsletter</a>
+    <!-- Other Socials SVG Icon -->
+    <a href="newsletter.html" class="social-btn email" aria-label="Other Socials">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      Other Socials
+    </a>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Anisha Imran. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+
+  <script>
+  const container = document.getElementById('cert-scroll');
+  const certs = container.querySelectorAll('.cert-thumbnail');
+
+  let currentIndex = 0;
+
+  function scrollCerts(direction) {
+    if (direction === 'left' && currentIndex > 0) {
+      currentIndex--;
+    } else if (direction === 'right' && currentIndex < certs.length - 1) {
+      currentIndex++;
+    }
+
+    // Scroll so the left edge of the certificate aligns with the container scroll left
+    const scrollPos = certs[currentIndex].offsetLeft;
+    container.scrollTo({ left: scrollPos, behavior: 'smooth' });
+
+    updateButtons();
+  }
+
+  function updateButtons() {
+    const leftBtn = document.querySelector('.scroll-btn.left');
+    const rightBtn = document.querySelector('.scroll-btn.right');
+
+    leftBtn.disabled = currentIndex === 0;
+    rightBtn.disabled = currentIndex === certs.length - 1;
+  }
+
+  window.addEventListener('load', () => {
+    currentIndex = 0;
+    scrollCerts('right');  // scroll to first cert on load
+  });
+
+</script>
+
+</script>
+
+</body>
+</html>
